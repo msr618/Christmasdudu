@@ -37,9 +37,17 @@
       }
     </script>
     <style>
+      /* 强制设置高度，防止父容器塌陷 */
+      html, body, #root {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
       body {
         background-color: #2a0a0a;
         color: #f3f4f6;
+        overflow-x: hidden; /* 防止动画导致的水平滚动 */
       }
     </style>
   <script type="importmap">
@@ -56,5 +64,7 @@
 </head>
   <body>
     <div id="root"></div>
+    <!-- 确保引入了 React 入口文件 -->
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
